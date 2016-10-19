@@ -228,7 +228,7 @@ gulp.task('rename', function () {
     .pipe(uglify())  //压缩
     .pipe(rename('jquery.min.js')) //会将jquery.js重命名为jquery.min.js
     .pipe(gulp.dest('js'));    //关于gulp-rename的更多强大的用法请参考https://www.npmjs.com/package/gulp-rename});
-    ```
+```
 ## 3 js文件压缩 
 使用gulp-uglify 
 
@@ -243,7 +243,7 @@ gulp.task('minify-js', function () {
     gulp.src('js/*.js') // 要压缩的js文件
     .pipe(uglify())  //使用uglify进行压缩,更多配置请参考：
     .pipe(gulp.dest('dist/js')); //压缩后的路径});
-    ```
+```
 ## 4 css文件压缩
 使用gulp-minify-css 
 
@@ -316,8 +316,7 @@ gulp.task('compile-less', function () {
     .pipe(less())
     .pipe(gulp.dest('dist/css'));
 });
-```
-```
+
 sass使用gulp-sass,安装：npm install --save-dev gulp-sass
 var gulp = require('gulp'),
     sass = require("gulp-sass");
