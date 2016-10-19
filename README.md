@@ -21,7 +21,6 @@ gulp.task('default', function() {  // 将你的默认的任务代码放在这});
 $ gulp
 `
 默认的名为 `default `的任务（`task`）将会被运行，在这里，这个任务并未做任何事情。
-
 想要单独执行特定的任务（`task`），请输入 `gulp <task> <othertask>`。
 
 
