@@ -188,7 +188,7 @@ var gulp = require('gulp'),    //一些gulp插件,abcd这些命名只是用来�
 ```
 虽然这没什么问题，但会使我们的gulpfile.js文件变得很冗长，看上去不那么舒服。gulp-load-plugins插件正是用来解决这个问题。
 gulp-load-plugins这个插件能自动帮你加载package.json文件里的gulp插件。例如假设你的package.json文件里的依赖是这样的:
-`
+```
 {
   "devDependencies": {
     "gulp": "~3.6.0",
@@ -196,7 +196,8 @@ gulp-load-plugins这个插件能自动帮你加载package.json文件里的gulp�
     "gulp-ruby-sass": "~0.4.3",
     "gulp-load-plugins": "~0.5.1"
   }
-}`
+}
+```
 然后我们可以在gulpfile.js中使用gulp-load-plugins来帮我们加载插件： 
 
 var gulp = require('gulp');//加载gulp-load-plugins插件，并马上运行它var plugins = require('gulp-load-plugins')(); 
