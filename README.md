@@ -12,16 +12,18 @@ $ npm install gulp   这这是把把gulp安装到项目中
 $ npm install --save-dev gulp   在安装的时候把gulp写进项目package.json文件的依赖中
 `
 3. 在项目根目录下创建一个名为 `gulpfile.js` 的文件：
-```jacascript
+`
 var gulp = require('gulp');
 
 gulp.task('default', function() {  // 将你的默认的任务代码放在这});
-```
+`
 4. 运行` gulp`：
-> 
+`
 $ gulp
+`
 默认的名为 `default `的任务（`task`）将会被运行，在这里，这个任务并未做任何事情。
 想要单独执行特定的任务（`task`），请输入 `gulp <task> <othertask>`。
+
 
 1.1、说明：`src`方法是指定需要处理的源文件的路径，`gulp`借鉴了`Unix操作系统`的管道（`pipe`）思想，前一级的输出，直接变成后一级的输入，`gulp.src`返回当前文件流至可用插件；
 1.2、`globs`：  需要处理的源文件匹配符路径。类型(必填)：`String or StringArray`；
