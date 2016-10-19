@@ -18,7 +18,9 @@ $ npm install --save-dev gulp   在安装的时候把gulp写进项目package.jso
 var gulp = require('gulp');
 gulp.task('default', function() {  // 将你的默认的任务代码放在这});
 `
+
 4. 运行` gulp`：
+
 `
 $ gulp
 `
