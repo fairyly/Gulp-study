@@ -47,7 +47,6 @@ gulp.task('testLess', function () {
 });
 ```
 1.3、
->
 `options`：  类型(可选)：`Object`，有3个属性`buffer、read、base`；
 `options.buffer`：  类型：`Boolean`  默认：true 设置为false，将返回`file.content`的流并且不缓冲文件，处理大文件时非常有用；
 `options.read`：  类型：`Boolean`  默认：true 设置false，将不执行读取文件操作，返回null；
