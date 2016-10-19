@@ -91,11 +91,17 @@ gulp.task('minicss', ['testLess'], function () { //执行完testLess任务后再
 });
 ```
 3.4、fn：  类型(必填)：Function 该任务调用的插件操作；
+
 4、gulp.watch(glob [, opts], tasks) or gulp.watch(glob [, opts, cb])
+
 4.1、说明：watch方法是用于监听文件变化，文件一修改就会执行指定的任务；
+
 4.2、glob：  需要处理的源文件匹配符路径。类型(必填)：String or StringArray；
+
 4.3、opts：  类型(可选)：Object 具体参看https://github.com/shama/gaze；
+
 4.4、tasks：  类型(必填)：StringArray 需要执行的任务的名称数组；
+
 4.5、cb(event)：  类型(可选)：Function 每个文件变化执行的回调函数；
 ```javascript
 	gulp.task('watch1', function () {
