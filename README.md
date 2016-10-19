@@ -29,7 +29,8 @@ $ gulp
 1.2、`globs`：  需要处理的源文件匹配符路径。
 类型(必填)：`String or StringArray`；
 
-通配符路径匹配示例：
+通配符路径匹配示例:
+
 `
 “src/a.js”：指定具体文件；
 
@@ -40,7 +41,6 @@ $ gulp
 “{}”：匹配多个属性    例：src/{a,b}.js(包含a.js和b.js文件)  src/*.{jpg,png,gif}(src下的所有jpg/png/gif文件)；
 
 “!”：排除文件    例：!src/a.js(不包含src下的a.js文件)；
-
 `
 ```javascript
 	var gulp = require('gulp'),
