@@ -329,7 +329,7 @@ gulp.task('compile-sass', function () {
 ```
 ## 9 图片压缩
 可以使用gulp-imagemin插件来压缩jpg、png、gif等图片。
-```
+```javascript
 安装：npm install --save-dev gulp-imagemin
 var gulp = require('gulp');var imagemin = require('gulp-imagemin');var pngquant = require('imagemin-pngquant'); //png图片压缩插件gulp.task('default', function () {    return gulp.src('src/images/*')
         .pipe(imagemin({
