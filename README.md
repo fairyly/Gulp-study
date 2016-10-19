@@ -55,9 +55,13 @@ gulp.task('testLess', function () {
 ```
 1.3、
 `options`：  类型(可选)：`Object`，有3个属性`buffer、read、base`；
+
 `options.buffer`：  类型：`Boolean`  默认：true 设置为false，将返回`file.content`的流并且不缓冲文件，处理大文件时非常有用；
+
 `options.read`：  类型：`Boolean`  默认：true 设置false，将不执行读取文件操作，返回null；
+
 `options.base`：  类型：`String`  设置输出路径以某个路径的某个组成部分为基础向后拼接，具体看下面示例：
+
 ```javascript
 	gulp.src('client/js/**/*.js') 
   .pipe(minify())
@@ -77,13 +81,21 @@ gulp.src('client/js/**/*.js', { base: 'client' })
   .pipe(gulp.dest('./build/minified_templates'));
   ```
 2.2、path：  类型(必填)：String or Function 指定文件输出路径，或者定义函数返回文件输出路径亦可；
+
 2.3、options：  类型(可选)：Object，有2个属性cwd、mode；
+
 options.cwd：  类型：String  默认：process.cwd()：前脚本的工作目录的路径 当文件输出路径为相对路径将会用到；
+
 options.mode：  类型：String  默认：0777 指定被创建文件夹的权限；
+
 3、gulp.task(name[, deps], fn)
+
 3.1、说明：task定义一个gulp任务；
+
 3.2、name：  类型(必填)：String 指定任务的名称（不应该有空格）；
+
 3.3、deps：  类型(可选)：StringArray，该任务依赖的任务（注意：被依赖的任务需要返回当前任务的事件流，请参看下面示例）；
+
 ```javascript
 	gulp.task('testLess', function () {
     return gulp.src(['less/style.less'])
@@ -186,16 +198,25 @@ gulp-load-plugins这个插件能自动帮你加载package.json文件里的gulp�
   }
 }`
 然后我们可以在gulpfile.js中使用gulp-load-plugins来帮我们加载插件： 
+
 var gulp = require('gulp');//加载gulp-load-plugins插件，并马上运行它var plugins = require('gulp-load-plugins')(); 
+
 然后我们要使用gulp-rename和gulp-ruby-sass这两个插件的时候，就可以使用plugins.rename和plugins.rubySass来代替了,也就是原始插件名去掉gulp-前缀，之后再转换为驼峰命名。 
+
 实质上gulp-load-plugins是为我们做了如下的转换 
+
 plugins.rename = require('gulp-rename'); 
+
 plugins.rubySass = require('gulp-ruby-sass'); 
-gulp-load-plugins并不会一开始就加载所有package.json里的gulp插件，而是在我们需要用到某个插件的时候，才去加载那个插件。 
+
+gulp-load-plugins并不会一开始就加载所有package.json里的gulp插件，而是在我们需要用到某个插件的时候，才去加载那个插件。
+
 最后要提醒的一点是，因为gulp-load-plugins是通过你的package.json文件来加载插件的，所以必须要保证你需要自动加载的插件已经写入到了package.json文件里，并且这些插件都是已经安装好了的。 
 ## 2 重命名
 使用gulp-rename 
+
 安装：npm install --save-dev gulp-rename 
+
 用来重命名文件流中的文件。用gulp.dest()方法写入文件时，文件名使用的是文件流中的文件名，如果要想改变文件名，那可以在之前用gulp-rename插件来改变文件流中的文件名。
 ```
 var gulp = require('gulp'),    rename = require('gulp-rename'),
@@ -209,7 +230,9 @@ gulp.task('rename', function () {
     ```
 ## 3 js文件压缩 
 使用gulp-uglify 
+
 安装：npm install --save-dev gulp-uglify 
+
 用来压缩js文件，使用的是uglify引擎 
 ```
 var gulp = require('gulp'),
@@ -222,7 +245,9 @@ gulp.task('minify-js', function () {
     ```
 ## 4 css文件压缩
 使用gulp-minify-css 
+
 安装：npm install --save-dev gulp-minify-css 
+
 要压缩css文件时可以使用该插件 
 ```
 var gulp = require('gulp'),
@@ -250,7 +275,9 @@ gulp.task('minify-html', function () {
 ```
 ## 6 js代码检查
 使用gulp-jshint 
+
 安装：npm install --save-dev gulp-jshint 
+
 用来检查js代码 
 ```
 var gulp = require('gulp'),
@@ -263,7 +290,9 @@ gulp.task('jsLint', function () {
 ```
 ## 7 文件合并
 使用gulp-concat 
+
 安装：npm install --save-dev gulp-concat 
+
 用来把多个文件合并为一个文件,我们可以用它来合并js或css文件等，这样就能减少页面的http请求数了 
 ```
 var gulp = require('gulp'),
@@ -313,7 +342,9 @@ gulp-imagemin的使用比较复杂一点，而且它本身也有很多插件，�
 ```
 ## 10 自动刷新
 使用gulp-livereload插件，安装:`npm install --save-dev gulp-livereload`。 
+
 当代码变化时，它可以帮我们自动刷新页面 
+
 该插件最好配合谷歌浏览器来使用，且要安装`livereload chrome extensio`n扩展插件,不能下载的请自行FQ。 
 ```javascript
 var gulp = require('gulp'),
